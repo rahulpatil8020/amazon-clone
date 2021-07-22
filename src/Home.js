@@ -17,14 +17,14 @@ function Home() {
           <Product
             id='3477543'
             title="XTEP Men's Hi-Fashion Breathable Fabric Upper AirMega Running Shoes"
-            price=' 6,929.00'
+            price= {6929.99}
             image='https://m.media-amazon.com/images/I/81RMWCdHoRL._AC_SX200_SY161_QL70_.jpg'
             rating={4}
           />
           <Product
             id='3457935'
             title='Lenovo Legion 5Pi 10th Gen Intel Core i7 15.6" FHD Gaming Laptop '
-            price='1,34,990.00'
+            price= {134990.99}
             image='https://m.media-amazon.com/images/I/61pW8BWBq1L._AC_UY218_.jpg'
             rating={5}
           />
@@ -34,21 +34,21 @@ function Home() {
           <Product
             id='5690848'
             title='Samsung Galaxy M21 (Midnight Blue, 4GB RAM, 64GB Storage)'
-            price='3,999.00'
+            price={3999.99}
             image='https://images-eu.ssl-images-amazon.com/images/I/41xg1z2h-uL._AC_US160_FMwebp_QL70_.jpg'
             rating={3}
           />
           <Product
             id='475839'
             title='LG 14 Place Settings Dishwasher (DFB424FW, White color)'
-            price='58,999.00'
+            price={58999.99}
             image='https://images-eu.ssl-images-amazon.com/images/I/316D1RTT-yL._AC_US160_FMwebp_QL70_.jpg'
             rating={5}
           />
           <Product
             id='495934'
             title='AmazonBasics Water Repellant Shower Curtain with Hooks - 72" x 72", Gray Stripe'
-            price='599.00 '
+            price={599.99 }
             image='https://m.media-amazon.com/images/I/81v8JAWL4OL._AC_UL320_.jpg'
             rating={2}
           />
@@ -58,7 +58,7 @@ function Home() {
           <Product
             id=' 834874'
             title='Echo Dot (3rd Gen) – Smart speaker with Alexa (Black)'
-            price='3,499.00 '
+            price={3499.99 }
             image='https://images-na.ssl-images-amazon.com/images/I/61%2BQNG8IiPL._SY355_.jpg'
             rating={5}
           />
