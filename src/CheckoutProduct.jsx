@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import './CheckoutProduct.css';
 import StarIcon from '@material-ui/icons/Star';
 import { useStateValue } from './StateProvider';
@@ -7,29 +7,29 @@ function CheckoutProduct({id, image, title, price, rating, count}) {
 
     const [itemCount, setItemCount] = useState(count);
 
+    const [{ basket }, dispatch] = useStateValue();
+
     const addItem = () => {
-        setItemCount(itemCount + 1)
-        console.log(itemCount)
-        updateItemCount();
+        setItemCount(itemCount + 1);     
+        let temp = itemCount + 1;
+        updateItemCount(temp);
     }
     const subItem = () => {       
-        setItemCount(itemCount - 1);    
-        console.log(itemCount)  
-        if (itemCount < 1){
+        setItemCount(itemCount - 1);   
+        let temp = itemCount - 1 
+        if (itemCount === 1){
             removeFromBasket();
         }
         else {
-            updateItemCount();
+            updateItemCount(temp);
         }
     }
 
-    const [{basket}, dispatch] = useStateValue();
-q   `adfswASDFWASDFWASDFWADF`
-    const updateItemCount = () => {
+    const updateItemCount = (temp) => {
         dispatch({
             type: "CHANGE_ITEM_COUNT", 
             id:id,
-            count: itemCount,
+            count: temp,
         });
     }
 

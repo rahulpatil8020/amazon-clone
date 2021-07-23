@@ -20,8 +20,24 @@ function Product({ id, title, image, price, rating }) {
   }
 
   const addToBasket = () => {
-   alert(`Number of Items Added ${count}`)
-    setCount(1)
+    const index = basket.findIndex(
+      (basketItem) => basketItem.id === id
+    )
+    if(index>=0){
+      let ct = count + basket[index].count;
+      dispatch({
+        type: "UPDATE_COUNT_ON_ADD",
+        item : {
+          id: id,
+          title: title,
+          image: image,
+          price: price,
+          rating: rating,
+          count: ct,
+          index: index
+        }
+      })
+    }else{
     dispatch({
       type: "ADD_TO_BASKET",
       item: {
@@ -33,6 +49,9 @@ function Product({ id, title, image, price, rating }) {
         count: count
       }
     })
+  }
+    alert(`Number of Items Added ${count}`)
+    setCount(1)
   }
   return (
     <div className='product'>

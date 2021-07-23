@@ -17,7 +17,7 @@ function Home() {
           <Product
             id='3477543'
             title="XTEP Men's Hi-Fashion Breathable Fabric Upper AirMega Running Shoes"
-            price= {6929.99}
+            price= {6999.89}
             image='https://m.media-amazon.com/images/I/81RMWCdHoRL._AC_SX200_SY161_QL70_.jpg'
             rating={4}
           />

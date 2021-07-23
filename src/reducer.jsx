@@ -46,6 +46,14 @@ console.log(action)
                 basket: newBasket2
                
             }
+        
+        case "UPDATE_COUNT_ON_ADD":
+            let newBasket3 = [...state.basket]
+            newBasket3[action.item.index] = action.item;
+            return {
+                ...state,
+                basket: newBasket3
+            };
 
         default:
             return state;
