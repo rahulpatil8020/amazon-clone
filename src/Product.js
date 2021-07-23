@@ -2,23 +2,39 @@ import './Product.css';
 import React from 'react';
 import StarIcon from '@material-ui/icons/Star';
 import { useStateValue } from './StateProvider';
+import { useState } from 'react';
 
 function Product({ id, title, image, price, rating }) {
+
+  const [{ basket }, dispatch] = useStateValue();
   
-  const [{basket}, dispatch] = useStateValue();
-  
-  const addToBasket = ()  => {
-      dispatch({
-        type: "ADD_TO_BASKET",
-        item: {
-          id:id,
-          title:title,
-          image: image,
-          price: price,
-          rating: rating
-        }
-      })
+  const [count, setCount] = useState(1);
+
+
+  const addItem = () => {
+    setCount(count+1);
+  }
+  const subItem = () => {
+    if(count>1){
+    setCount(count-1);
     }
+  }
+
+  const addToBasket = () => {
+   alert(`Number of Items Added ${count}`)
+    setCount(1)
+    dispatch({
+      type: "ADD_TO_BASKET",
+      item: {
+        id: id,
+        title: title,
+        image: image,
+        price: price,
+        rating: rating,
+        count: count
+      }
+    })
+  }
   return (
     <div className='product'>
       <div className='product_info'>
@@ -38,7 +54,13 @@ function Product({ id, title, image, price, rating }) {
         </div>
       </div>
       <img src={image} alt='' />
-      <button onClick={addToBasket}>Add To Basket</button>
+      <div className="buttons">
+        <button className="item__count" onClick={subItem}>-</button>
+
+        <button className="product__add" onClick={addToBasket}>{count > 1 ? (count) : "Add To Basket"} </button>
+
+        <button className="item__count" onClick={addItem}>+</button>
+      </div>
     </div>
   );
 }
