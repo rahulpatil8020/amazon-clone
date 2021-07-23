@@ -10,7 +10,6 @@ function Product({ id, title, image, price, rating }) {
   
   const [count, setCount] = useState(1);
 
-
   const addItem = () => {
     setCount(count+1);
   }
