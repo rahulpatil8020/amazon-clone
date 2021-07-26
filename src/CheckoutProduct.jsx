@@ -9,6 +9,9 @@ function CheckoutProduct({id, image, title, price, rating, count}) {
 
     const [{ basket }, dispatch] = useStateValue();
 
+    const itemIndex = basket.findIndex(
+        (basketItem) => basketItem.id === id);
+
     const addItem = () => {
         setItemCount(itemCount + 1);     
         let temp = itemCount + 1;
@@ -64,7 +67,7 @@ function CheckoutProduct({id, image, title, price, rating, count}) {
                             </p>
                         ))}
                 </div>
-                <strong>{itemCount}</strong>
+                <strong>{basket[itemIndex].count}</strong>
                 <div className="checkout__buttons">
                 <button className="item__count" onClick={subItem}>-</button>
                 <button className="remove__all" onClick={removeFromBasket}>

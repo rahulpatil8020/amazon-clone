@@ -31,7 +31,7 @@ console.log(action)
             }
         case 'CHANGE_ITEM_COUNT':
             const itemindex = state.basket.findIndex(
-                (basketItem) => basketItem.id == action.id
+                (basketItem) => basketItem.id === action.id
             )
             let newBasket2 = [...state.basket];
             if(itemindex >= 0){
