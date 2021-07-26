@@ -5,7 +5,7 @@ import { useStateValue } from './StateProvider';
 
 function CheckoutProduct({id, image, title, price, rating, count}) {
 
-    const [itemCount, setItemCount] = useState(count);
+    
 
     const [{ basket }, dispatch] = useStateValue();
 
@@ -13,14 +13,12 @@ function CheckoutProduct({id, image, title, price, rating, count}) {
         (basketItem) => basketItem.id === id);
 
     const addItem = () => {
-        setItemCount(itemCount + 1);     
-        let temp = itemCount + 1;
+        let temp = basket[itemIndex].count + 1;
         updateItemCount(temp);
     }
-    const subItem = () => {       
-        setItemCount(itemCount - 1);   
-        let temp = itemCount - 1 
-        if (itemCount === 1){
+    const subItem = () => {          
+        let temp = basket[itemIndex].count - 1 
+        if (temp === 0){
             removeFromBasket();
         }
         else {
