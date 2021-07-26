@@ -3,8 +3,8 @@ import './Header.css';
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import { Link } from 'react-router-dom';
-import { useStateValue } from './StateProvider';
-import { getTotalItem } from './reducer';
+import { useStateValue } from '../../StateProvider';
+import { getTotalItem } from '../../reducer';
 
 function Header() {
   const [{basket}, dispatch] = useStateValue();
